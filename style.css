@@ -1,0 +1,466 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+section#home {
+  background-color: #656D7D;
+}
+
+section#footer {
+  background-color: #141C1C;
+}
+
+/* Styling Nav */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1vh;
+}
+
+nav .logo {
+  margin-left: 5vw;
+}
+
+nav .logo img {
+  height: 5vh;
+}
+
+nav .nav-links {
+  display: flex;
+  height: 5vh;
+  justify-content: space-between;
+}
+
+nav .nav-links ul {
+  display: flex;
+}
+
+nav .nav-links ul li {
+  margin-top: 1vh;
+  padding: 0 1.5vw;
+  font-size: large;
+}
+
+.anim-line {
+  text-decoration: none;
+  color: white;
+  position: relative;
+}
+
+.anim-line:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: -.5vh;
+  left: 0;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  background-color: white;
+}
+
+.anim-line:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  text-decoration: none;
+  color: black;
+}
+
+nav .nav-links .home-btn {
+  width: 8vw;
+  margin: 0.5vh 2vw .5vh 10vw;
+  color: white;
+  background: none;
+  border: 2px solid white;
+  cursor: pointer;
+  font-size: large;
+}
+
+nav .nav-links .home-btn:hover {
+  color: black;
+  background: white;
+  transition: 0.3s ease-in;
+  border: 2px solid black;
+}
+
+/* Home section starts */
+
+.home {
+  display: flex;
+  width: 75vw;
+  margin: 7vh 12.5vw;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.home .home-img img {
+  width: 30vw;
+  height: 80vh;
+}
+
+.home .home-content {
+  width: 30vw;
+}
+
+.home .home-content h1 {
+  font-size: 4rem;
+  color: #fff;
+}
+
+.home .home-content h3 {
+  font-size: 1.5rem;
+  margin-top: 5vh;
+  color: #fff;
+}
+
+.home .home-content .home-form {
+  background-color: white;
+  margin-top: 5vh;
+  padding: 1vh;
+}
+
+.home .home-content .home-form .form-text-box {
+  border: none;
+  height: 3vh;
+  width: 18vw;
+  margin: 0 1vw;
+}
+
+.home .home-content .home-form .form-btn {
+  color: #fff;
+  width: 7vw;
+  height: 3vh;
+  background: #656D7D;
+  cursor: pointer;
+}
+
+/* About Us section starts */
+
+.aboutus {
+  display: grid;
+  place-items: center;
+  margin-bottom: 7.5vh;
+}
+
+.aboutus .aucontent {
+  font-weight: 900;
+  width: 40vw;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 2vh;
+}
+
+.aboutus .austats {
+  display: flex;
+  margin-top: 2.5vh;
+  margin-bottom: 2.5vh;
+  width: 50vw;
+  border: 2px solid black;
+}
+
+.aboutus .austats div {
+  text-align: center;
+  width: 10vw;
+  padding: 2vh 0;
+  margin: 2vh;
+  border: 2px solid black;
+}
+
+/* numeric animations */
+@property --num {
+  syntax: '<integer>';
+  inherits: true;
+  initial-value: 0;
+}
+
+.aboutus .austats h2.s1::before {
+  counter-reset: my-counter var(--num);
+  content: counter(my-counter);
+  animation: count1 5s ease-in-out forwards;
+}
+
+@keyframes count1 {
+  to {
+    --num: 10;
+  }
+}
+
+.aboutus .austats h2.s2::before {
+  counter-reset: my-counter var(--num);
+  content: counter(my-counter);
+  animation: count2 5s ease-in-out forwards;
+}
+
+@keyframes count2 {
+  to {
+    --num: 1093;
+  }
+}
+
+.aboutus .austats h2.s3::before {
+  counter-reset: my-counter var(--num);
+  content: counter(my-counter);
+  animation: count3 5s ease-in-out forwards;
+}
+
+@keyframes count3 {
+  to {
+    --num: 1355;
+  }
+}
+
+.aboutus .austats h2.s4::before {
+  counter-reset: my-counter var(--num);
+  content: counter(my-counter);
+  animation: count4 5s ease-in-out forwards;
+}
+
+@keyframes count4 {
+  to {
+    --num: 50;
+  }
+}
+
+.aboutus .austats h2.s5::before {
+  counter-reset: my-counter var(--num);
+  content: counter(my-counter);
+  animation: count5 5s ease-in-out forwards;
+}
+
+@keyframes count5 {
+  to {
+    --num: 90;
+  }
+}
+
+.aboutus .auimg img {
+  width: 50vw;
+  height: 60vh;
+  border: 2px solid black;
+}
+
+/* Services section starts */
+
+.services {
+  display: grid;
+  place-items: center;
+  margin: 0 12.5vw 7.5vh;
+  width: 75vw;
+}
+
+.services .services-head {
+  font-size: 2rem;
+  text-align: center;
+  width: 50vw;
+}
+
+.services-cards .card {
+  margin-top: 5vh;
+  display: flex;
+  width: 70vw;
+  height: 46vh;
+  border: 2px solid black;
+  justify-content: center;
+  align-items: center;
+  padding: .5vh .5vw;
+}
+
+.services-cards .card .services-content {
+  width: 30vw;
+  margin: 0 2.5vw;
+}
+
+.services-cards .card .services-content h2 {
+  font-size: 2.1rem;
+}
+
+.services-cards .card .services-content p {
+  font-size: 1.5rem;
+  margin-top: 2vh;
+}
+
+.services-cards .services-img img {
+  width: 35vw;
+  height: 43vh;
+}
+
+/* Team section starts */
+
+.team {
+  width: 75vw;
+  margin: 0 12.5vw 5vh;
+}
+
+.team-head {
+  width: 70vw;
+  margin: 0 2.5vw 1vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.team-head h2 {
+  font-size: 2rem;
+  width: 15vw;
+}
+
+.team-head p {
+  font-size: 1.5rem;
+  width: 30vw;
+  text-align: end;
+}
+
+.wrapper ul {
+  list-style: none;
+  padding: 0;
+}
+
+.wrapper ul:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.wrapper ul div {
+  width: 25vw;
+  height: 70vh;
+  float: left;
+  padding: 0 2.5vw;
+  background-size: cover;
+  background-position: center center;
+}
+
+.wrapper ul div h2 {
+  width: 20vw;
+  margin: 1vh 0;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.wrapper ul div p {
+  width: 20vw;
+  margin: 1vh 0;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.wrapper ul div img {
+  width: 20vw;
+  height: 50vh;
+  margin-top: 1vh;
+}
+
+.wrapper ul div:nth-child(1n + 4) {
+  max-height: 0;
+  opacity: 0;
+  transition: 0.3s ease-in;
+}
+
+.wrapper .btn-area {
+  display: block;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 900;
+  width: 10vw;
+  line-height: 40px;
+  margin: 0 auto;
+  border-radius: 50px;
+}
+
+.wrapper .btn-area .btn2 {
+  display: none;
+}
+
+.wrapper #btnBox {
+  display: none;
+}
+
+.wrapper #btnBox:checked~ul div:nth-child(1n + 4) {
+  max-height: 1000px;
+  opacity: 1;
+  transition: 0.3s ease-in;
+}
+
+.wrapper #btnBox:checked~.btn-area .btn2 {
+  display: block;
+}
+
+.wrapper #btnBox:checked~.btn-area .btn1 {
+  display: none;
+}
+
+/* Footer design starts */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.foot-head {
+  display: flex;
+  margin-top: 5vh;
+}
+
+.foot-head img {
+  height: 5vh;
+  position: absolute;
+  left: 10vw;
+}
+
+.foot-head .social-btns {
+  display: flex;
+  position: absolute;
+  right: 7vw;
+}
+
+.foot-head .social-btns i {
+  margin: 0 2vw;
+}
+
+.fa-2x {
+  color: #fff;
+}
+
+.footer hr {
+  position: absolute;
+  left: 10vw;
+  margin-top: 12vh;
+  width: 80vw;
+}
+
+.footer .footer-lists {
+  display: flex;
+  position: absolute;
+  margin-top: 15vh;
+  left: 10vw;
+  width: 80vw;
+}
+
+.footer .footer-lists div {
+  width: 16vw;
+  cursor: pointer;
+}
+
+.footer .footer-lists div h2 {
+  font-size: 2rem;
+  margin-bottom: 3vh;
+  color: #fff;
+}
+
+.footer .footer-lists div p {
+  font-size: 1.5rem;
+  color: #828284;
+  margin: 1vh 0;
+}
+
+.footer .foot {
+  color: #fff;
+  margin: 40vh auto 2vh;
+}
